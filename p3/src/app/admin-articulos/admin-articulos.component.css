@@ -1,0 +1,18 @@
+.tablex {
+    border-collapse:separate;
+
+}
+
+.tablex th,
+.tablex td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tablex th {
+  background-color: #f2f2f2;
+}
+
+.tablex tr.selected {
+  background-color: #e0e0e0;
+}

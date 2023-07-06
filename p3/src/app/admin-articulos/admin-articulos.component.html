@@ -1,0 +1,43 @@
+<h2>Administración de Artículos</h2>
+
+<table class="tablex">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Borrar</th>
+            <th>Seleccionar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let articulo of articulos; let i = index" [class.selected]="articuloSeleccionado === articulo">
+            <td>{{ articulo.codigo }}</td>
+            <td>{{ articulo.descripcion }}</td>
+            <td>{{ articulo.precio }}</td>
+            <td><button (click)="seleccionarArticulo(articulo)">Seleccionar</button></td>
+            <td><button (click)="borrarArticulo(i)">Borrar</button></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div>
+    <label>Código:</label>
+    <input type="number" [(ngModel)]="codigo" name="codigo">
+</div>
+<br>
+<div>
+    <label>Descripción:</label>
+    <input type="text" [(ngModel)]="descripcion" name="descripcion">
+</div>
+<br>
+<div>
+    <label>Precio:</label>
+    <input type="number" [(ngModel)]="precio" name="precio">
+</div>
+<br>
+
+
+
+<button (click)="agregarArticulo()">Agregar</button>
+<button (click)="modificarArticulo()" [disabled]="!articuloSeleccionado">Modificar</button>
